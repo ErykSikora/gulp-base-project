@@ -1,0 +1,12 @@
+@import "partials/_fonts";
+@import "partials/_mixins";
+@import "partials/_partials";
+@import "partials/_variables";
+
+
+html, body{
+  font-family: $mainFont;
+  font-weight: 500;
+  font-size: 16px;
+  color: $mainTextColor;
+}
