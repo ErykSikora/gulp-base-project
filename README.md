@@ -31,7 +31,7 @@ Gulp it's a free source toolkit for building JS-based applications. It processes
 2. Open *cmd* and enter `npm install gulp`, files will be copied from global gulp
 3. Gulp has various extensions defined at the top of the file, for example: `var sass = require('gulp-sass');` **IF** the console returns an `gulp-sass` *(name)* error type in google **gulp sass save-dev** *(dependence_name save-dev)*. On page [npmjs.com/package/gulp-sass](https://www.npmjs.com/package/gulp-sass) you will find information on how to install taht dependence (`npm install node-sass gulp-sass --save-dev`).
 
-## Files structure
+## Structure
 
 - assets *(created by gulp)*
     - css
