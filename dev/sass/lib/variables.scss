@@ -1,0 +1,62 @@
+// --- FONTS
+@import "../fonts/poppins.scss";
+
+
+// --- COLORS
+$c1: #111;
+$c2: #EEE;
+$c3: #333;
+$c4: #FFF;
+
+
+// --- SHADES
+$c5: darken($c3, 22.35);
+$c6: darken($c3, 33.33);
+$c7: lighten($c1, 18.82);
+
+
+// --- BASICS
+
+// gradients
+$g1: linear-gradient(to right, $c4, transparent);
+
+// boundary rays
+$r1: 30px;
+$r2: 50%;
+
+// fonts
+$f1: "Poppins", sans-serif;
+
+// MEDIA QUERIES THRESHOLDS
+
+$msm: "only screen and (max-width : 575px)";
+$sm: "only screen and (min-width : 576px)";
+$mmd: "only screen and (max-width : 767px)";
+$md: "only screen and (min-width : 768px)";
+$mlg: "only screen and (max-width : 991px)";
+$lg: "only screen and (min-width : 992px)";
+$mxl: "only screen and (max-width : 1199px)";
+$xl: "only screen and (min-width : 1200px)";
+$msl: "only screen and (max-width : 1299px)";
+$sl: "only screen and (min-width : 1300px)";
+$mxxl: "only screen and (max-width : 1429px)";
+$xxl: "only screen and (min-width : 1430px)";
+$mxxxl: "only screen and (max-width : 1499px)";
+$xxxl: "only screen and (min-width : 1500px)";
+$hlg: "only screen and (min-width : 1800px)";
+$hxlg: "only screen and (min-width : 1921px)";
+
+
+// --- PATCHES
+
+.container {
+  @media #{$sl} {
+    max-width: 1230px;
+  }
+  @media #{$xxl} {
+    max-width: 1300px;
+  }
+  @media #{$hxlg} {
+    max-width: 1500px;
+  }
+}

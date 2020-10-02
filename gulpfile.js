@@ -9,14 +9,18 @@ const gulp = require('gulp'),
       deploy = require("ftp-deploy"),
       ftp = require('vinyl-ftp');
 
+const host = 'xxx.xy';
+const user = 'xxx';
+const pass = 'xxx';
+
 const ftpHost = {
-      host: 'xxx.xy',
-      user: 'xxx',
-      password: 'xxx',
+      host: host,
+      user: user,
+      password: pass,
       parallel: 10
 };
 
-const dirHost = 'domains/xxx.xy/public_html';
+const dirHost = 'domains/'+host+'/public_html';
 
 function scss(){
   return gulp
@@ -57,7 +61,7 @@ function deploy_js(){
   return gulp
     .src(globs, { base: '.', buffer: false })
     .pipe(conn.newer(dirHost))
-    .pipe(conn.dist(dirHost));
+    .pipe(conn.dest(dirHost));
 }
 
 function watch(){
@@ -67,7 +71,7 @@ function watch(){
     }
   });
   gulp.watch(["./dev/sass/*.scss", "./dev/sass/**/*.scss"], gulp.series(scss, deploy_css));
-  gulp.watch(["./dev/js/*.js", "./dev/js/**/*.js"], js);
+  gulp.watch(["./dev/js/*.js", "./dev/js/**/*.js"], gulp.series(js, deploy_js));
   gulp.watch('./*.html').on('change', browserSync.reload);
 };
 
